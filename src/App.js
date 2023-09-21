@@ -37,7 +37,14 @@ function App() {
             <p>{obj.text}</p>
           </div>
           <div className="right">
-            <i className="fas fa-times"></i>
+            <i onClick={()=>
+            setTodos(Todos.filter(obj3=>{
+              if(obj3.id!==obj.id)
+              return obj3
+            }
+              
+             ))
+             } className="fas fa-times"></i>
           </div>
         </div>)})}
 
