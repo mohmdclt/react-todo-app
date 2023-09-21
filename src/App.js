@@ -15,11 +15,12 @@ function App() {
       <div  className="input">
         <input value={Todo} onChange={(e)=>setTodo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
         <i onClick={()=>setTodos([...Todos,{id:Date.now(),text:Todo,status:false}])} className="fas fa-plus"></i>
+
       </div>
       <div className="todos">
         { Todos.map((obj)=>{
 
-       return( <div className="todo">
+       return( <div className="todo"  key={obj.id}>
           <div className="left">
             <input onChange={(e)=>{
               
@@ -42,7 +43,7 @@ function App() {
 
         { Todos.map((obj)=>{
           if (obj.status) {
-          return(<h1>{obj.text}</h1>)
+          return(<h1  key={obj.id}>{obj.text}</h1>)
         }
         return null
       })}
